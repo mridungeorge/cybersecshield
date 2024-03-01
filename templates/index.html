@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW Car Sales</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to BMW Car Sales</h1>
+        <p>Explore the ultimate driving machine.</p>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='img/bmw-home.jpg') }}" class="img-fluid" alt="BMW">
+            </div>
+            <div class="col-md-6">
+                <h2>Discover Our Series</h2>
+                <p>Find the perfect BMW series that fits your style.</p>
+                <a href="/series" class="btn btn-primary">Browse Series</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

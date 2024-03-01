@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW Series</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>BMW Series</h2>
+        <div class="row">
+            {% for s in series %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{{ url_for('static', filename='img/' ~ s.image) }}" class="card-img-top" alt="{{ s.name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ s.name }}</h5>
+                            <p class="card-text">{{ s.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h3>Experience the Drive</h3>
+                <video width="100%" controls>
+                    <source src="{{ url_for('static', filename='videos/bmw-drive.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
